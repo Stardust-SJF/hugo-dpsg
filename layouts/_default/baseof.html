@@ -37,6 +37,9 @@
 	{{- if not hugo.IsServer }}
 		{{ template "_internal/google_analytics.html" . }}
 	{{- end }}
+	{{ if .Param "math" }}
+		{{ partialCached "math.html" . }}
+	{{ end }}
 </head>
 <body class="body">
 	{{ partial "header" . }}
