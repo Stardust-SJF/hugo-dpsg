@@ -1,10 +1,16 @@
 {{ define "main" }}
 <main class="main list" role="main">
-	{{- with .Title }}
+	{{- $displayTitle := .Params.display_title | default .Title -}}
+   {{- if and $displayTitle (ne $displayTitle "none") }} 
+    <header class="main__header">
+        <h1 class="main__title">{{ $displayTitle }}</h1>
+    </header>
+    {{- end }}
+	<!-- {{- with .Title }}
 	<header class="main__header">
 		<h1 class="main__title">{{ . }}</h1>
 	</header>
-	{{- end }}
+	{{- end }} -->
 	{{- if .Site.Params.belowTitlePartial }}{{ partial .Site.Params.belowTitlePartial . }}{{ end }}
 	{{- with .Content }}
 	<div class="content main__content clearfix">
