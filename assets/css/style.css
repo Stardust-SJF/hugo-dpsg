@@ -1486,4 +1486,24 @@ textarea {
 		font-size: 11px;
 		font-size: .6875rem;
 	}
+	
+	.widget__icon {
+		width: 20px;       /* 图标宽度 */
+		height: 20px;      /* 图标高度，确保为正方形 */
+		margin-right: 12px; /* 图标和文本之间的间距 */
+		object-fit: cover;  /* 确保图标以覆盖方式适应正方形 */
+		border-radius: 0px; /* 如果需要图标有轻微圆角，可调整 */
+	}
+	
+	/* .widget__item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 12px; 
+	} */
+	
+	/* .widget__link {
+		text-decoration: none;  
+		color: inherit;         
+	} */
+	
 }
